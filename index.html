@@ -29,8 +29,16 @@
 <!-- NAVIGATION -->
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
+	   <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+   
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
         <a class="navbar-brand" ui-sref="home">AngularUI Router</a>
     </div>
+	<div class="collapse navbar-collapse" id="example-navbar-collapse">
     <ul class="nav navbar-nav" id="navigation">
         <li><a ui-sref-active="active"   ui-sref="home">Home</a></li>
         <li><a ui-sref-active="active" ui-sref="about">About</a></li>
@@ -51,8 +59,8 @@
             </ul>
          </li>
     </ul>
+	</div>
 </nav>
-
 
 <!-- MAIN CONTENT -->
 <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
