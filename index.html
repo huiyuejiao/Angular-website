@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/animations.css">
+  
+
+    <!-- JS (load angular, ui-router, and our custom js file) -->
+	<script src="js/jquery.js"></script>
+	<script src="bootstrap-3.3.5-dist\bootstrap-3.3.5-dist\js\bootstrap.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+	<script src="js/angular-animate.js"></script>
+    <script src="app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/animations.js"></script>
+	
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp">
+
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">AngularUI Router</a>
+    </div>
+    <ul class="nav navbar-nav" id="navigation">
+        <li><a ui-sref-active="active"   ui-sref="home">Home</a></li>
+        <li><a ui-sref-active="active" ui-sref="about">About</a></li>
+		<li><a ui-sref-active="active"  ui-sref="form.profile">Contact Us</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Blog 
+               <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Javascript</a></li>
+               <li class="divider"></li>
+               <li><a href="#">Another</a></li>
+            </ul>
+         </li>
+    </ul>
+</nav>
+
+
+<!-- MAIN CONTENT -->
+<!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+
+</body>
+</html>

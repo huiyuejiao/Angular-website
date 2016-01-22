@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+     
+	<label class="control-label" for="query">Search:</label>
+	<div>
+    <input type="text" class="form-control" id="query" name="query" ng-model="query">
+    </div>
+    <label class="control-label" for="orderprop">Sort by:</label>
+	<div>
+   <select id="orderprop" ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+    </div>
+      
+     
+    </div>
+	
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a  ui-sref-active="active" ui-sref="about.phonedetail({id:phone.id})" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
+          <a  ui-sref-active="active" ui-sref="about.phonedetail({id:phone.id})">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

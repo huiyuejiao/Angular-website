@@ -1,0 +1,57 @@
+
+
+
+  <div class="form-group has-feedback">
+    <label class="control-label" for="name">Name</label>
+    <div>
+      <input type="text" class="form-control" id="name" name="name" required ng-model="formData.name">
+      <span class="glyphicon glyphicon-ok form-control-feedback"  ng-show="myForm.name.$dirty && myForm.name.$valid"></span>   
+    </div>
+	<div ng-show="myForm.name.$dirty&&myForm.name.$invalid">
+            <span>Missing name</span>
+    </div>
+	<field-error for="myForm.name">Missing name</field-error>
+  </div>
+  <div class="form-group has-feedback">
+    <label class="control-label" for="email">Email</label>
+    <div>
+      <input type="email" class="form-control" id="email" name="email" required ng-model="formData.email">
+      <span class="glyphicon glyphicon-ok form-control-feedback"  ng-show="myForm.email.$dirty && myForm.email.$valid"></span>   
+    </div>
+	<div ng-show="myForm.email.$dirty && myForm.email.$invalid">Hint:
+            <span ng-show="myForm.email.$error.required">Missing Email</span>
+            <span ng-show="myForm.email.$error.email">Invalidate Email</span>
+    </div>
+  </div>
+    <div class="form-group has-feedback">
+	<div>
+  <label class="radio-inline">
+  <input type="radio" name="gender" id="male" value="male" ng-model="formData.gender"> Male
+</label>
+<label class="radio-inline">
+  <input type="radio" name="gender" id="female" value="female" ng-model="formData.gender"> Female
+</label>
+</div>
+<field-error for="myForm.gender">Missing name</field-error>
+</div>
+
+  <div class="form-group has-feedback">
+    <label class="control-label" for="star">Star</label>
+    <div>
+      <input type="number" class="form-control spoint" id="star" name="star" required ng-model="formData.star">
+      <span class="glyphicon glyphicon-ok form-control-feedback"  ng-show="myForm.star.$dirty && myForm.star.$valid"></span>   
+    </div>
+	<span ng-show="myForm.star.$error.point">Not legal points </span>
+	</div>
+
+
+  <div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a  ng-click="reset()" ng-disabled="isUnchanged(formData)"class="btn btn-block btn-primary">
+    Reset 
+    </a>
+    <a  ui-sref="form.interests"class="btn btn-block btn-info" ng-disabled="myForm.$invalid||isUnchanged(formData)"ng-click="update(formData)">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>
